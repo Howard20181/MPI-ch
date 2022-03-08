@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mpi-sum.cpp">
+    <ClCompile Include="mpi_pi.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
