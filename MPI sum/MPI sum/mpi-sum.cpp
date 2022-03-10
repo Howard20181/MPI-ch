@@ -2,12 +2,13 @@
 #include<iomanip>
 #include<ctime>
 #include <mpi.h>
+#include <cstdlib>
 
 #define MAX 100000000
 
 using namespace std;
 
-int main(int argc, int argv[])
+int main(int argc, char* argv[])
 {
 	int comm_sz, my_rank;
 	double temp = 0;
@@ -25,8 +26,10 @@ int main(int argc, int argv[])
 
 	cout << "rank " << my_rank << " on " << p_name << endl;
 
-	block = (argc != 1) ? argv[1] : MAX / comm_sz;
-	double startNum = (my_rank)*block + 1;
+	double tp = (argc != 1) ? atof(argv[1]) : MAX;
+	block = tp / comm_sz;
+
+	double startNum = my_rank * block + 1;
 	double endNum = (my_rank + 1) * block;
 
 	cout << setprecision(0);
