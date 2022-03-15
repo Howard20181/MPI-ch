@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MPI-sum-of-vectors", "MPI-sum-of-vectors\MPI-sum-of-vectors.vcxproj", "{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		MPI_Debug|x64 = MPI_Debug|x64
+		MPI_Debug|x86 = MPI_Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Debug|x64.ActiveCfg = Debug|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Debug|x64.Build.0 = Debug|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Debug|x86.ActiveCfg = Debug|Win32
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Debug|x86.Build.0 = Debug|Win32
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.MPI_Debug|x64.ActiveCfg = MPI_Debug|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.MPI_Debug|x64.Build.0 = MPI_Debug|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.MPI_Debug|x86.ActiveCfg = MPI_Debug|Win32
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.MPI_Debug|x86.Build.0 = MPI_Debug|Win32
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Release|x64.ActiveCfg = Release|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Release|x64.Build.0 = Release|x64
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Release|x86.ActiveCfg = Release|Win32
+		{01FEBF71-2B5F-4D0D-A950-8BDCBDF56C0D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9C98F8A-8F14-43D5-A35D-D04D212A17F1}
+	EndGlobalSection
+EndGlobal
