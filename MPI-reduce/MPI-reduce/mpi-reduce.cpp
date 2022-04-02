@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
 	double sum_temp = 0;
 	double sum = 0;
 	double block = 0;
+	double start_time, end_time;
 
 	char p_name[MPI_MAX_PROCESSOR_NAME];
 	int p_namelen;
@@ -21,12 +22,11 @@ int main(int argc, char* argv[])
 	MPI_Init(0, 0);
 	MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-
+	start_time = MPI_Wtime();
 	MPI_Get_processor_name(p_name, &p_namelen);
-
 	cout << "rank " << my_rank << " on " << p_name << endl;
-
 	double tp = (argc != 1) ? atof(argv[1]) : MAX;
+
 	if (my_rank == 0 && argc != 1)
 		cout << "argv[1]=" << argv[1] << endl;
 
@@ -37,6 +37,7 @@ int main(int argc, char* argv[])
 
 	cout << setprecision(0);
 	//cout << "my_rank=" << my_rank << setiosflags(ios::fixed) << " start=" << startNum << " end=" << endNum << endl;
+
 	if (my_rank == 0) {
 		cout << "sum of 1 to " << setiosflags(ios::fixed) << tp << endl;
 		cout << setiosflags(ios::fixed) << "block size=" << block << endl;
@@ -47,12 +48,15 @@ int main(int argc, char* argv[])
 		sum_temp += startNum;
 		startNum++;
 	}
+
 	MPI_Reduce(&sum_temp, &sum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+	end_time = MPI_Wtime();
 	if (my_rank == 0) {
 		cout << "Comm_size " << comm_sz << endl;
 		cout << "sum=" << setiosflags(ios::fixed) << sum << endl;
-		cout << setprecision(3);
 	}
-	cout << "Rank " << my_rank << " total time " << (double)clock() / CLK_TCK << "s." << endl;
+
+	cout << "Rank " << my_rank << " total time " << (end_time - start_time) * 1000 << endl;
+
 	MPI_Finalize();
 }
