@@ -1,5 +1,5 @@
-//¡¶»ùÓÚMPIµÄ´óÊı¾İ¸ßĞÔÄÜ¼ÆËãµ¼ÂÛ¡·
-// Frank Nielsen ÕÅÎ°ÕÜÒë 2018Äê7ÔÂµÚÒ»°æµÚÒ»´ÎÓ¡Ë¢
+//ã€ŠåŸºäºMPIçš„å¤§æ•°æ®é«˜æ€§èƒ½è®¡ç®—å¯¼è®ºã€‹
+// Frank Nielsen å¼ ä¼Ÿå“²è¯‘ 2018å¹´7æœˆç¬¬ä¸€ç‰ˆç¬¬ä¸€æ¬¡å°åˆ·
 // https://www.lix.polytechnique.fr/~nielsen/HPC4DS/
 
 // filename: MPIMonteCarloPi.cpp
@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-    long long int count_time; // ×ÜµÄ¼ÆËã´ÎÊı
+    long long int count_time; // æ€»çš„è®¡ç®—æ¬¡æ•°
     long long int Cal[2] = { 0 };
     if (my_rank == 0) {
         count_time = 10000000;
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
         }
 
         std::cout << 4.0 * Cal[0] / count_time << std::endl;
-    } // ÔËËãµÄ×Ó½Úµã
+    } // è¿ç®—çš„å­èŠ‚ç‚¹
     else {
         srand((unsigned)time(NULL));
         MPI_Recv(&count_time, 1, MPI_LONG_LONG_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUSES_IGNORE);
